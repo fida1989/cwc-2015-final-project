@@ -23,6 +23,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -56,7 +57,7 @@ public class InstantAdPostAtivity extends BaseActivity {
 	private String mImagePath_1 = "", mImagePath_2 = "", mImagePath_3 = "";
 	private int mcheck_image;
 	int position_new;
-	TextView mBtnPost;
+	Button mBtnPost;
 	List<String> spinnerSubCategoryArray;
 	ProgressDialog progress;
 	String cat_name, sub_cat_name, cat_id_2;
@@ -156,7 +157,7 @@ public class InstantAdPostAtivity extends BaseActivity {
 			}
 		});
 
-		mBtnPost = (TextView) findViewById(R.id.buttonAdPost);
+		mBtnPost = (Button) findViewById(R.id.buttonAdPost);
 
 		mBtnPost.setOnClickListener(new OnClickListener() {
 

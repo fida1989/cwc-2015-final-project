@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
 	int pos = 0;
 	Button post_ad;
 	SharedPreferences pref; 
-	Button viewAd;
+	Button viewAd,searchAd;
 	
 	
 	public HomeFragment() {
@@ -75,6 +75,23 @@ public class HomeFragment extends Fragment {
 				MainActivity.mDrawerList.setItemChecked(4, true);
 				MainActivity.ab.setTitle(getActivity().getResources().getStringArray(R.array.menu_array)[4]);
 				MainActivity.mTitle = getActivity().getResources().getStringArray(R.array.menu_array)[4];
+			}
+		});
+		
+		viewAd = (Button)getActivity().findViewById(R.id.search_button1);
+		viewAd.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Fragment fragment = new SearchAdFragment();
+				FragmentManager fragmentManager = getFragmentManager();
+				fragmentManager.beginTransaction()
+						.replace(R.id.content_frame, fragment).commit();
+				
+				MainActivity.mDrawerList.setItemChecked(5, true);
+				MainActivity.ab.setTitle(getActivity().getResources().getStringArray(R.array.menu_array)[5]);
+				MainActivity.mTitle = getActivity().getResources().getStringArray(R.array.menu_array)[5];
 			}
 		});
 
