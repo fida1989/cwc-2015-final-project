@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+
+    <item
+        android:id="@+id/fb"
+        android:title="Facebook"/>
+      <item
+        android:id="@+id/tw"
+        android:title="Twitter"/>
+        <item
+        android:id="@+id/ig"
+        android:title="Instagram"/>
+          <item
+        android:id="@+id/sms"
+        android:title="SMS"/>
+</menu>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/gN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Name:"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <!-- Mobile number label -->
+
+    <TextView
+        android:id="@+id/name_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <TextView
+        android:id="@+id/gD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Address:"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <!-- Name Label -->
+
+    <TextView
+        android:id="@+id/address_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Large"
+       />
+
+    <TextView
+        android:id="@+id/gL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Email:"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <TextView
+        android:id="@+id/email_textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <TextView
+        android:id="@+id/gF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Phone:"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <TextView
+        android:id="@+id/phone_textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/profile_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="Edit Profile" />
+
+        <Button
+            android:id="@+id/profile_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="Share"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/logout_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="Logout" />
+    </LinearLayout>
+
+</LinearLayout>

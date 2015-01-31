@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/gname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <EditText
+            android:id="@+id/editgName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your name here"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location:"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <Spinner
+            android:id="@+id/register_spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/city_prompt" />
+
+        <Spinner
+            android:id="@+id/register_spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/area_prompt" />
+
+        <TextView
+            android:id="@+id/gemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <EditText
+            android:id="@+id/editgemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/gphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number:"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <EditText
+            android:id="@+id/editgphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your phone number"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/gpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password:"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <EditText
+            android:id="@+id/editgpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/reg_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:text="Register Account" />
+    </LinearLayout>
+
+</ScrollView>
