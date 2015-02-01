@@ -153,8 +153,15 @@ public class MainActivity extends Activity {
 
 		switch (item.getItemId()) {
 		case R.id.action_post:
-			startActivity(new Intent(MainActivity.this,
-					InstantAdPostAtivity.class));
+			SharedPreferences pref;
+			pref = getSharedPreferences("MyPref", 0);
+			if (pref.getBoolean("log_track", false)) {
+				startActivity(new Intent(MainActivity.this,
+						InstantAdPostAtivity.class));
+			}else{
+				Toast.makeText(getApplicationContext(), "Please Log In!",
+						Toast.LENGTH_LONG).show();
+			}			
 			return true;
 
 		default:
@@ -266,20 +273,7 @@ public class MainActivity extends Activity {
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 
-	@Override
-	protected void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-		/*
-		 * if (Values.register) { Values.register = false; Fragment fragment =
-		 * new AccountFragment(); FragmentManager fragmentManager =
-		 * getFragmentManager(); fragmentManager.beginTransaction()
-		 * .replace(R.id.content_frame, fragment).commit();
-		 * 
-		 * }
-		 */
-	}
-
+	
 	private void loadLocations() {
 		
 

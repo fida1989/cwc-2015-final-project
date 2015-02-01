@@ -32,6 +32,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.mobioapp.klassify.MainActivity;
 import com.mobioapp.klassify.R;
 import com.mobioapp.klassify.models.Item;
+import com.mobioapp.klassify.utils.DetectConnection;
 import com.mobioapp.klassify.utils.URLs;
 import com.mobioapp.klassify.utils.Values;
 
@@ -78,8 +79,8 @@ public class HomeFragment extends Fragment {
 			}
 		});
 		
-		viewAd = (Button)getActivity().findViewById(R.id.search_button1);
-		viewAd.setOnClickListener(new OnClickListener() {
+		searchAd = (Button)getActivity().findViewById(R.id.search_button1);
+		searchAd.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
@@ -99,7 +100,13 @@ public class HomeFragment extends Fragment {
 
 		mDemoSlider2 = (SliderLayout) getActivity().findViewById(R.id.slider2);
 
-		loadData();
+		if(DetectConnection.checkInternetConnection(getActivity())){
+			loadData();	
+		}else{
+			Toast.makeText(getActivity(), " No Internet! ",
+					Toast.LENGTH_SHORT).show();
+		}
+		
 
 	}
 
@@ -214,7 +221,7 @@ public class HomeFragment extends Fragment {
 							Fragment fragment = new ItemViewFragment();
 							FragmentManager fragmentManager = getFragmentManager();
 							fragmentManager.beginTransaction()
-									.replace(R.id.content_frame, fragment).commit();
+									.replace(R.id.content_frame, fragment).addToBackStack(null).commit();
 						}
 					});
 			mDemoSlider.addSlider(textSliderView);

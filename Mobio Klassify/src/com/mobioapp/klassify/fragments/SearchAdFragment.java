@@ -28,6 +28,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.mobioapp.klassify.R;
 import com.mobioapp.klassify.adapters.ItemAdapter;
 import com.mobioapp.klassify.models.Item;
+import com.mobioapp.klassify.utils.DetectConnection;
 import com.mobioapp.klassify.utils.URLs;
 import com.mobioapp.klassify.utils.Values;
 
@@ -56,12 +57,18 @@ public class SearchAdFragment extends Fragment {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				String q = searchEt.getText().toString()+"";
-				if(q.length()>1){
-					loadData(q);
+				if(DetectConnection.checkInternetConnection(getActivity())){
+					if(q.length()>1){
+						loadData(q);
+					}else{
+						Toast.makeText(getActivity(), " Enter search query! ",
+								Toast.LENGTH_SHORT).show();
+					}
 				}else{
-					Toast.makeText(getActivity(), " Enter search query! ",
+					Toast.makeText(getActivity(), " No Internet! ",
 							Toast.LENGTH_SHORT).show();
 				}
+				
 			}
 		});
 		
@@ -86,18 +93,7 @@ public class SearchAdFragment extends Fragment {
 
 		
 
-		/*
-		 * if (CheckInternet.isNetworkPresent(getActivity())&&!Values.loaded) {
-		 * loadData(); } else {
-		 * 
-		 * 
-		 * Toast.makeText(getActivity(), " No Data ! ", Toast.LENGTH_SHORT)
-		 * .show();
-		 * 
-		 * 
-		 * }
-		 */
-
+		
 	}
 
 	private void loadData(String query) {
@@ -109,6 +105,9 @@ public class SearchAdFragment extends Fragment {
 
 			@Override
 			public void onStart() {
+				
+				items.clear();
+				lv.setAdapter(null);
 
 				// called before request is started
 				progress = new ProgressDialog(getActivity());

@@ -11,6 +11,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -36,6 +37,7 @@ import android.widget.Toast;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.mobioapp.klassify.fragments.ProfileViewFragment;
 import com.mobioapp.klassify.models.CategoryNew;
 import com.mobioapp.klassify.models.MyPost;
 import com.mobioapp.klassify.models.User;
@@ -410,6 +412,9 @@ public class InstantAdPostAtivity extends BaseActivity {
 		String cat1 = Values.cats.get(spinner1.getSelectedItemPosition()).id+"";
 		String cat2 = Values.cats.get(spinner1.getSelectedItemPosition()).sub_cats.get(spinner2.getSelectedItemPosition()).id+"";
 
+		
+		
+		
 		params.put("cate_1", cat1);
 		params.put("cate_2", cat2);
 		params.put("title", edTitle.getText().toString());
